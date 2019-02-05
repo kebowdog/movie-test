@@ -2,7 +2,7 @@
   <div>
     <h1>Search for a Movie:</h1>
     <div class="search">
-      <input type="text" placeholder="Search for Movies" v-model="searchTerms" />
+      <input type="text" @keyup.enter="fetchData" placeholder="Search for Movies" v-model="searchTerms" />
       <input type="button" @click="fetchData" value="Refresh">
     </div>
     <h1>Search Results:</h1>
@@ -83,8 +83,12 @@ export default {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     vertical-align: top;
     margin: 10px;
-    height: 650px;
-    width: 300px;
+    min-height: 550px;
+    width: 250px;
+
+    img {
+      width: 100%;
+    }
 
     .page-text {
       padding: 10px;

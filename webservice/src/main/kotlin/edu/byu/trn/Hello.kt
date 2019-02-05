@@ -75,7 +75,7 @@ fun fetchUrl(url: String): MutableList<Movie> {
     val movies = obj.optJSONArray("results")
     var movieList: MutableList<Movie> = mutableListOf()
     for (i in 0..(movies.length() - 1)) {
-        if (i > 10)
+        if (i >= 10)
             break
 
         val movie = movies.getJSONObject(i)
